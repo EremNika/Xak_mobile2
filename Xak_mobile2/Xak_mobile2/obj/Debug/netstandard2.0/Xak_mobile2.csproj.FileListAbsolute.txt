@@ -1,0 +1,15 @@
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\bin\Debug\netstandard2.0\Xak_mobile2.deps.json
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\bin\Debug\netstandard2.0\Xak_mobile2.dll
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\bin\Debug\netstandard2.0\Xak_mobile2.pdb
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\Xak_mobile2.csproj.AssemblyReference.cache
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\Xak_mobile2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\Xak_mobile2.AssemblyInfoInputs.cache
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\Xak_mobile2.AssemblyInfo.cs
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\Xak_mobile2.csproj.CoreCompileInputs.cache
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\Xak_mobile2.dll
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\refint\Xak_mobile2.dll
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\Xak_mobile2.pdb
+C:\Users\nitro\Desktop\Xak_mobile2\Xak_mobile2\Xak_mobile2\obj\Debug\netstandard2.0\ref\Xak_mobile2.dll
