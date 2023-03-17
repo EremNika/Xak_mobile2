@@ -2,7 +2,7 @@
 using SQLite;
 
 
-namespace Xak_mobile2.Models
+namespace Xak_mobile2 
 {
     public class UserRepository
     {

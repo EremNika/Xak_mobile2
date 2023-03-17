@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Schema;
 
-namespace Xak_mobile2.Models
+namespace Xak_mobile2 
 {
     [Table("Projects")]
     public class Projects

@@ -3,7 +3,7 @@ using SQLite;
 
 namespace Xak_mobile2.Models
 {
-    public class  ProjectRepository
+    public class ProjectRepository
     {
         SQLiteConnection database;
         public ProjectRepository(string databasePath)

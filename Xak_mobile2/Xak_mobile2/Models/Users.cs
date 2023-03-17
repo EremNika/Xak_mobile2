@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Xak_mobile2.Models
+namespace Xak_mobile2
 {
 
     [Table("Users")]

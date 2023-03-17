@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Xak_mobile2
@@ -13,6 +8,27 @@ namespace Xak_mobile2
         public MainPage()
         {
             InitializeComponent();
+        }
+        protected override void OnAppearing()
+        {
+            friendsList.ItemsSource = App.Database.GetItems();
+            base.OnAppearing();
+        }
+        // обработка нажатия элемента в списке
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Users selectedFriend = (Users)e.SelectedItem;
+            FriendPage friendPage = new FriendPage();
+            friendPage.BindingContext = selectedFriend;
+            await Navigation.PushAsync(friendPage);
+        }
+        // обработка нажатия кнопки добавления
+        private async void CreateFriend(object sender, EventArgs e)
+        {
+            Users friend = new Users();
+            FriendPage friendPage = new FriendPage();
+            friendPage.BindingContext = friend;
+            await Navigation.PushAsync(friendPage);
         }
     }
 }
