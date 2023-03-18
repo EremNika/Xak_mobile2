@@ -11,11 +11,9 @@
        
 
         <Label Text="Логин" />
-        <Entry Text="{Binding Login}" />
-        <Label Text="Тег" />
-        <Entry Text="{Binding Teg}" />
-        <Label Text="Пароль" />
-        <Entry Text="{Binding Password}" />
+        <Entry x:Name="LoginText"/>
+        <Label Text="Пароль"/>
+        <Entry x:Name="PassText" IsPassword="True"/>
         <Button Text="Вход" Clicked="CreateFriend" />
         
     </StackLayout>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xak_mobile2.Pages.TaskPage" Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <StackLayout x:Name="MainLayout">
+            <CollectionView x:Name="TaskView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Id_task}" IsVisible="False"/>
+                            <Label Text="Название"/>
+                            <Entry x:Name="NameBox" Text="{Binding Task_Name}"/>
+                            <Label Text="Описание"/>
+                            <Entry x:Name="DescriptionBox" Text="{Binding Description}"/>
+                            <Label Text="Создано (сейчас по умолчанию)"/>
+                            <DatePicker x:Name="CreatedBox" Date="{Binding Date_create}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="Отменено"/>
+            <Switch x:Name="CanceledBox" IsToggled="False" Toggled="CanceledBox_Toggled"/>
+            <Label Text="Выполнено"/>
+            <Switch x:Name="FinishedBox" IsToggled="False" Toggled="FinishedBox_Toggled"/>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="EditButton" Text="Ок" Clicked="EditButton_Clicked"/>
+                <Button x:Name="DeleteButton" Text="Удалить" Clicked="DeleteButton_Clicked"/>
+            </StackLayout>
+            <Button x:Name="CommentsButton" Text="Комментарии" Clicked="CommentsButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

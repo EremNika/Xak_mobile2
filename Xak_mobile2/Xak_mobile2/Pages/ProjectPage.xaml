@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xak_mobile2.Pages.ProjectPage" Appearing="ContentPage_Appearing" x:Name="Proj">
+    <ContentPage.Content>
+        <StackLayout x:Name="MainLayout">
+            <CollectionView x:Name="ProjectView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Id_project}" IsVisible="False"/>
+                            <Label Text="Название"/>
+                            <Entry x:Name="NameBox" Text="{Binding Name}"/>
+                            <Label Text="Создано (сейчас по умолчанию)"/>
+                            <DatePicker x:Name="CreatedBox" Date="{Binding Date_create}"/>
+                            
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="Проект активен"/>
+            <Switch x:Name="ActiveBox" IsToggled="False" Toggled="ActiveBox_Toggled"/>
+            <StackLayout>
+                <Button x:Name="EditButton" Text="Ок" Clicked="EditButton_Clicked"/>
+                <Button x:Name="DeleteButton" Text="Удалить" Clicked="DeleteButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

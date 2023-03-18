@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xak_mobile2.Pages.Profile" x:Name="ProfilePage" Appearing="ProfilePage_Appearing">
+  <!--Pages can be added as references or inline-->
+    <ContentPage x:Name="ProjectsTab" Title="Проекты" Appearing="ProjectsTab_Appearing">
+        <StackLayout>
+            <CollectionView x:Name="ProjectsView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}" FontSize="Medium" />
+                            <Label Text="{Binding Date_update}" FontSize="Small"/>
+                            <Button x:Name="EditProjectButton" Text="Изменить" Clicked="EditProjectButton_Clicked"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button x:Name="AddProjectButton" Text="Добавить проект" Clicked="AddProjectButton_Clicked"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage x:Name="TasksTab" Title="Задачи" Appearing="TasksTab_Appearing">
+        <StackLayout>
+            <CollectionView x:Name="TasksView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Task_Name}" FontSize="Medium" />
+                            <Label Text="{Binding Date_update}" FontSize="Small"/>
+                            <Button x:Name="EditTaskButton" Text="Изменить" Clicked="EditTaskButton_Clicked"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button x:Name="AddTaskButton" Text="Добавить задачу" Clicked="AddTaskButton_Clicked"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage x:Name="ProfileTab" Title="Профиль" Appearing="ContentPage_Appearing" Disappearing="ProfileTab_Disappearing">
+        <StackLayout>
+            <CollectionView x:Name="ProfileView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Логин"/>
+                            <Entry x:Name="LoginBox" Placeholder="Логин" Text="{Binding Login}"/>
+                            <Label Text="Тег"/>
+                            <Entry x:Name="TagBox" Placeholder="Тег" Text="{Binding Tag}"/>
+                            <Label Text="Пароль"/>
+                            <Entry x:Name="PassBox" Placeholder="Пароль" Text="{Binding Password}" IsPassword="True" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label x:Name="ProjectsTotal"/>
+            <Label x:Name="TasksTotal"/>
+            <Button x:Name="EditButton" Text="Сохранить" Clicked="Edit_info"/>
+            <Button x:Name="DeleteButton" Text="Delete" Clicked="Delete_info"/>
+        </StackLayout>    
+    </ContentPage>
+</TabbedPage>
