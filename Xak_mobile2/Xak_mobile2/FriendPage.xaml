@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xak_mobile2.FriendPage" Title="Информация о друге">
-    <StackLayout>
-     
 
-    <ListView x:Name="friendsList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
+
+
+    <StackLayout>
+        <ListView x:Name="friendsList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
@@ -18,6 +19,14 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Image WidthRequest="65" HeightRequest="65" Aspect="AspectFit" Source="for_xak.jpg" VerticalOptions="Center"></Image>
+            <Label Text="User" VerticalOptions="Center"></Label>    
+        </StackLayout>
+
 
         <StackLayout Orientation="Horizontal">
             <Button Text="Сохранить" Clicked="SaveFriend" />

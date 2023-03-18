@@ -1,32 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Xak_mobile2;assembly=Xak_mobile2"
-             x:Class="Xak_mobile2.MainPage" Title="Добро пожаловать!">
+             xmlns:local="clr-namespace:Xak_mobile2;assembly=Xak_mobile2" x:DataType="local:MainPage"
+                  x:Class="Xak_mobile2.MainPage"  >
+    
+        <MasterDetailPage.Master >
 
-    <StackLayout Padding="60">
-
-
-        <Image Source="{local:ImageResource Xak_mobile2.Source.for_xak.jpg}" Margin="50" HeightRequest="150" />
-       
-
-        <Label Text="Логин" />
-        <Entry Text="{Binding Login}" />
-        <Label Text="Тег" />
-        <Entry Text="{Binding Teg}" />
-        <Label Text="Пароль" />
-        <Entry Text="{Binding Password}" />
-        <Button Text="Вход" Clicked="CreateFriend" />
-        
-    </StackLayout>
+            <ContentPage  Title="Master" Background="#b9f6ca">
+                <ContentPage.Content>
+                    <ScrollView>
+                        <StackLayout  >
+                            <Image WidthRequest="65" HeightRequest="65" Aspect="AspectFit"  Source="for_xak.jpg" VerticalOptions="Center"></Image>
+                            <Label Text="User" VerticalOptions="Center"></Label>
+                            <Button Text="Dashboard" Clicked="Button2_Clicked"></Button>
+                            <Button Text="Task" Clicked="Button_Clicked_2"></Button>
+                            <Button Text="Project" Clicked="Button_Clicked_1"></Button>
+                        </StackLayout>
+                    </ScrollView>
 
 
 
+                </ContentPage.Content>
+            </ContentPage>
+        </MasterDetailPage.Master>
+
+        <MasterDetailPage.Detail>
+            <ContentPage>
+
+                <StackLayout  >
+
+                    <Image Source="{local:ImageResource Xak_mobile2.Source.for_xak.jpg}" Margin="5" HeightRequest="50" />
+
+                    <Label Text="Логин" />
+                    <Entry Text="{Binding Login}" />
+                    <Label Text="Тег" />
+                    <Entry Text="{Binding Teg}" />
+                    <Label Text="Пароль" />
+                    <Entry Text="{Binding Password}" />
+                    <Button Text="Вход" Clicked="CreateFriend" />
+
+                </StackLayout>
 
 
 
 
-    <!--<ListView x:Name="friendsList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
+
+            </ContentPage>
+
+
+
+            <!--<ContentPage>
+        <StackLayout Padding="60">
+
+
+            <Image Source="{local:ImageResource Xak_mobile2.Source.for_xak.jpg}" Margin="50" HeightRequest="150" />
+
+
+            <Label Text="Логин" />
+            <Entry Text="{Binding Login}" />
+            <Label Text="Тег" />
+            <Entry Text="{Binding Teg}" />
+            <Label Text="Пароль" />
+            <Entry Text="{Binding Password}" />
+            <Button Text="Вход" Clicked="CreateFriend" />
+
+        </StackLayout>-->
+
+
+
+
+        </MasterDetailPage.Detail>
+
+
+
+
+
+
+
+
+
+
+
+        <!--<ListView x:Name="friendsList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -44,8 +99,8 @@
 
 
         <!--<Button Text="Добавить" Clicked="CreateFriend" />-->
-
-  
-
-      
-</ContentPage>
+ 
+</MasterDetailPage>
+ 
+    
+ 
