@@ -31,6 +31,14 @@ namespace Xak_mobile2
             App.Database.DeleteItem(friend.Id_user);
             this.Navigation.PopAsync();
         }
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Users selectedFriend = (Users)e.SelectedItem;
+            FriendPage friendPage = new FriendPage();
+            friendPage.BindingContext = selectedFriend;
+            await Navigation.PushAsync(friendPage);
+        }
+
         private void Cancel(object sender, EventArgs e)
         {
             this.Navigation.PopAsync();
