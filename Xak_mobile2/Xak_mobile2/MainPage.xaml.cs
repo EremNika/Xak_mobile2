@@ -3,18 +3,21 @@ using Xamarin.Forms;
 
 namespace Xak_mobile2
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
         public MainPage()
         {
 
+
             InitializeComponent();
+            //Detail = new NavigationPage(new Page());            
+
         }
         protected override void OnAppearing()
         {
             //friendsList.ItemsSource = App.Database.GetItems();
-          
-       
+
+
             base.OnAppearing();
         }
         // обработка нажатия элемента в списке
@@ -29,7 +32,7 @@ namespace Xak_mobile2
         private async void CreateFriend(object sender, EventArgs e)
         {
             Users friend = new Users();
-           FriendPage friendPage = new FriendPage();
+            FriendPage friendPage = new FriendPage();
             friendPage.BindingContext = friend;
             await Navigation.PushAsync(friendPage);
         }
@@ -53,8 +56,26 @@ namespace Xak_mobile2
         {
             this.Navigation.PopAsync();
         }
+
+        private void Button2_Clicked(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new Dashboard());
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new Progects());
+        }
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new Tasks());
+        }
+
+
     }
-
-
 }
+
+
+
 

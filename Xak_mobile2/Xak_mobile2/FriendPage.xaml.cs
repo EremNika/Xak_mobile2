@@ -43,5 +43,10 @@ namespace Xak_mobile2
         {
             this.Navigation.PopAsync();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

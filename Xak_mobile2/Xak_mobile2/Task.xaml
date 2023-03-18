@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xak_mobile2.Tasks" Title="Task">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+            <ScrollView>
+                <StackLayout>
+                    <Label x:Name="selected" HorizontalOptions="Center" FontSize="Large" />
+                    <ListView x:Name="taskList" ItemSelected="taskList_ItemSelected" />
+                </StackLayout>
+            </ScrollView>
+     
+       
+ 
+</ContentPage>
+    
+    
+    
