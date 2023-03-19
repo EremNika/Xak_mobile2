@@ -1,24 +1,25 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Xak_mobile2.Models;
+using Xak_mobile2.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Xak_mobile2
 {
     public partial class App : Application
     {
-        public const string DATABASE_NAME = "models.db";
-        public static UserRepository database;
-        public static UserRepository Database
+        public static BaseContext database;
+        public static Guid u_id { get; set; }
+        public static BaseContext Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new UserRepository(
-                        Path.Combine(
-                            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
+                    database = new BaseContext();
                 }
                 return database;
             }
@@ -26,8 +27,9 @@ namespace Xak_mobile2
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
+            var user = Database.Users.FirstOrDefault();
+            //u_id = user.Id_user;
+            MainPage = new NavigationPage(new MainPage()); //new Profile(user.Id_user)
         }
         protected override void OnStart()
         {

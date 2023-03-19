@@ -1,5 +1,9 @@
 ﻿using System;
+using Xak_mobile2.Models;
 using Xamarin.Forms;
+using System.Linq;
+using Xak_mobile2.Pages;
+using System.Diagnostics;
 
 namespace Xak_mobile2
 {
@@ -7,7 +11,6 @@ namespace Xak_mobile2
     {
         public MainPage()
         {
-
             InitializeComponent();
         }
         protected override void OnAppearing()
@@ -28,26 +31,41 @@ namespace Xak_mobile2
         // обработка нажатия кнопки добавления
         private async void CreateFriend(object sender, EventArgs e)
         {
-            Users friend = new Users();
-           FriendPage friendPage = new FriendPage();
-            friendPage.BindingContext = friend;
-            await Navigation.PushAsync(friendPage);
-        }
-
-        private void SaveFriend(object sender, EventArgs e)
-        {
-            var friend = (Users)BindingContext;
-            if (!String.IsNullOrEmpty(friend.Login))
+            Users friend = new Users()
             {
-                App.Database.SaveItem(friend);
+                Login = LoginText.Text,
+                Password = PassText.Text,
+            };
+            var query = from user in App.Database.Users where user.Login == friend.Login select user;
+            if(query.FirstOrDefault() != null)
+            {
+                Auth(friend);
             }
-            this.Navigation.PopAsync();
+            else
+            {
+                App.Database.Users.Add(friend);
+                App.Database.SaveChanges();
+                Profile friendPage = new Profile(friend.Id_user);
+                await Navigation.PushAsync(friendPage);
+            }
         }
-        private void DeleteFriend(object sender, EventArgs e)
+        private async void Auth(Users user)
         {
-            var friend = (Users)BindingContext;
-            App.Database.DeleteItem(friend.Id_user);
-            this.Navigation.PopAsync();
+            var query = from check in App.Database.Users where check.Login == user.Login select check.Id_user;
+            App.u_id = query.FirstOrDefault();
+            Profile friendPage = new Profile(App.u_id);
+            await Navigation.PushAsync(friendPage);
+            //if (query?.FirstOrDefault() == true)
+            //{
+            //    Profile friendPage = new Profile(user.Id_user);
+            //    await Navigation.PushAsync(friendPage);
+            //}
+            //else
+            //{
+            //    //если пароль неправильный
+            //    Debug.WriteLine("Pass is ot correct");
+            //}
+
         }
         private void Cancel(object sender, EventArgs e)
         {

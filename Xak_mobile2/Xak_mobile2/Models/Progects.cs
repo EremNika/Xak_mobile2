@@ -1,20 +1,24 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Xml.Schema;
 
 namespace Xak_mobile2 
 {
-    [Table("Projects")]
     public class Projects
     {
-        [PrimaryKey, AutoIncrement, Column("_id")]
-        public int Id_project { get; set; }
-        public int Id_user{ get; set; }
+        [Key]
+        public Guid Id_project { get; set; } = Guid.NewGuid();
+        public Guid Id_user{ get; set; }
+        [DisplayName("Project")]
         public string Name { get; set; }
-        public DateTime  Date_create { get; set; }
-        public DateTime Date_update { get; set; }
+        [DisplayName("Created")]
+        public DateTime Date_create { get; set; } = DateTime.Now;
+        [DisplayName("Updated")]
+        public DateTime Date_update { get; set; } = DateTime.Now;
 
         public virtual Users Users { get; set; }
 

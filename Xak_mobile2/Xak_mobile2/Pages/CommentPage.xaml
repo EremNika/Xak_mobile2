@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xak_mobile2.Pages.CommentPage" Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="CommentView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Тип комменария" FontSize="Medium"/>
+                            <Entry x:Name="TypeBox" Text="{Binding Type_comment}"/>
+                            <Label Text="Комментарий" FontSize="Small"/>
+                            <Entry x:Name="CommentBox" Text="{Binding Content}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="EditButton" Text="Ок" Clicked="EditButton_Clicked"/>
+                <Button x:Name="DeleteButton" Text="Удалить" Clicked="DeleteButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
