@@ -12,7 +12,7 @@ namespace Xak_mobile2
     public partial class App : Application
     {
         public static BaseContext database;
-        public static Guid u_id { get; set; }
+        public static Guid u_id { get; set; } = new Guid();
         public static BaseContext Database
         {
             get
@@ -27,9 +27,7 @@ namespace Xak_mobile2
         public App()
         {
             InitializeComponent();
-            var user = Database.Users.FirstOrDefault();
-            //u_id = user.Id_user;
-            MainPage = new NavigationPage(new MainPage()); //new Profile(user.Id_user)
+            MainPage = new NavigationPage(new MainPage());
         }
         protected override void OnStart()
         {

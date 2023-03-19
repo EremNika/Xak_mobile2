@@ -21,6 +21,7 @@ namespace Xak_mobile2.Pages
         {
             InitializeComponent();
             ID = id;
+            User();
         }
         //Вернуть былые значения юзеру
         private void User()
@@ -109,7 +110,7 @@ namespace Xak_mobile2.Pages
         //Загрузка текущего окна (всего)
         private void ProfilePage_Appearing(object sender, EventArgs e)
         {
-            App.u_id = user.Id_user;
+            App.u_id = ID;
         }
     }
 }
